@@ -1,15 +1,84 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<th:block th:insert="common/common :: head" />
 
+<head>
+<th:block th:insert="common/common :: head" />
+<link rel="stylesheet" href="/css/index.css"></link>
+<script src="/js/visual.js"></script>
+<script src="/js/index.js"></script>
+</head>
 <body>
-	<th:block th:insert="common/common :: header"/> <!-- 경로지정 문법 외웟! --> <!-- insert는 태그 전체를 긁어옴 -->
+	<th:block th:insert="common/common :: header" />
+	<!-- 경로지정 문법 외웟! -->
+	<!-- insert는 태그 전체를 긁어옴 -->
 	<!-- th:block = 가상의 태그 -->
-	
+
 	<main>
+		<h1>메인컨텐츠</h1>
+		<div class="wrap">
+			<section id="visual">
+				<h1>비주얼영역</h1>
+				<div class="wrap  area">
+					<!-- ///이미지들 -->
+					<ol class="imgs flex">
+						<th:block th:each="no:${#numbers.sequence(0,17)}">
+							<!-- 시퀀스의 번호를 no에 담는다 -->
+							<!-- 배열과 구조 동일 -->
+							<li th:value="${no }"><a href="#"
+								style="font-size: 100px; text-align: center; line-height: 363px">
+							</a></li>
+						</th:block>
+					</ol>
+					<!-- /////////////////////// -->
+					<ul class="bullet flex center">
+						<li th:each="no:${#numbers.sequence(0,17)}">
+						</li>
+					</ul>
+					<div>
+						<button class="btn  prev" type="button">&lt;</button>
+						<button class="btn  next" type="button">&gt;</button>
+					</div>
+
+				</div>
+			</section>
+			<section id="main-con">
+				<h1>메인컨텐츠</h1>
+				<div class="wrap">
+					<!-- //////////////////////////////// -->
+					<!-- 타임특가 -->
+					<section id="time">
+						<h1>타임특가 영역</h1>
+						<div class="wrap view-size">
+							<!-- 여기에 ul을 넣을예정입니다. -->
+							<!-- time-list.jsp의 태그가 삽입되는 영역 -->
+						</div>
+					</section>
+					<!-- //////////////////////////////// -->
+					<!-- //////////////////////////////// -->
+					<!-- 오감동 -->
+					<section id="product">
+						<h1>오감동 영역</h1>
+						<div class="wrap view-size">
+							<div class="info">
+								<p class="tit">오!감동</p>
+								<p class="sub">매일매일 코딩하고 싶은 이유, 코딩이 드리는 감동</p>
+							</div>
+							<div class="disp">
+								<!-- ul태그가 삽입될 공간입니다. -->
+							</div>
+						</div>
+					</section>
+					<!-- //////////////////////////////// -->
+
+				</div>
+			</section>
+
+		</div>
 	</main>
-	
-	<th:block th:insert="common/common :: #footer"/> <!-- include는 내부코드만 긁어옴 --> <!-- id로 긁어올수있음 -->
-	
+
+	<th:block th:insert="common/common :: #footer" />
+	<!-- include는 내부코드만 긁어옴 -->
+	<!-- id로 긁어올수있음 -->
+
 </body>
 </html>

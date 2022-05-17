@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<ul class="flex  around  time-list">
+	<!--for( TimeDTO dto : list )-->
+	<li class="goods" th:each="dto:${list}">
+		<ol class="wrap">
+			<li class="timg">
+				<div class="rate">
+					<!-- 할인율계산해서 집어넣어주세요 -->
+					40<i>%</i>
+				</div>
+				<img alt="이미지대체문구" th:src="${dto.imgUrl }" width="280px">
+
+			</li>
+			<li class="flex between sold-out">
+				<p class="timeDeal"></p>
+				<div>
+					<span>[[${dto.buyingCount }]]</span>개 구매중
+				</div>
+			</li>
+			<li class="title">[[${dto.title }]]</li>
+			<li class="price flex">
+				<div>
+					<span>[[${dto.price }]]</span>원
+				</div> <span>오아시스배송</span>
+			</li>
+		</ol>
+	</li>
+</ul>
+<div class="btn-wrap flex between">
+	<button class="btn perv">
+		<img alt="왼쪽화살표"
+			src="/images/index/circle-chevron-left-solid.svg"
+			width="50px">
+	</button>
+	<button class="btn next">
+		<img alt="오른쪽화살표"
+			src="/images/index/circle-chevron-right-solid.svg"
+			width="50px">
+	</button>
+</div>
+<script>
+	$(".btn-wrap .perv").css("opacity", 0);
+	$(".btn-wrap .next").click(function() {
+		$(".time-list").animate({
+			marginLeft : '-1024px'
+		});
+		$(".btn-wrap .perv").css("opacity", 1);
+		$(".btn-wrap .next").css("opacity", 0);
+	});
+	$(".btn-wrap .perv").click(function() {
+		$(".time-list").animate({
+			marginLeft : 0
+		});
+		$(".btn-wrap .perv").css("opacity", 0);
+		$(".btn-wrap .next").css("opacity", 1);
+	});
+	var urls = [ "./g1", "./g2", "./g3", "./g4", "./g5", "./g6" ]
+	console.log($(".goods"));
+	$(".goods").click(function() {
+		//여러개 선택자 이벤트에서 클릭된 태그선택자  $(this)
+		var i = $(this).index();
+		location.href = urls[i];
+		//location.href : <a href>
+	});
+</script>

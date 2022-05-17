@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import url("../header.css");
+
+main>.wrap{
+	width: 580px;
+	padding: 100px 0;
+}
+#join-form ul li{
+	margin-top: 10px;
+}
+#join-form ul li>div{
+	height: 60px;
+	line-height: 60px;
+}
+#join-form ul li>p{
+	padding-left: 130px;
+	font-size: 14px;
+}
+#join-form ul li label{
+	width: 110px;
+	display: inline-block;
+}
+#join-form ul li input{
+	width: 450px;
+	padding: 0.5em 1em;
+}
+#join-form ul li input::placeholder{
+	color: #99cc66;
+}
+#join-form ul li:last-child{
+	margin-top: 40px;
+}
+#join-form ul li button:disabled{
+	background-color: #888;
+	cursor: default;
+	opacity: 0.5;
+}
+#join-form ul li button {
+	width: 100%;
+	height: 60px;
+}
+
+input:focus{
+	border:1px solid #0970a2; 
+	outline: none;
+}

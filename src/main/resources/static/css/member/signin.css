@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import url("../header.css");
+
+main>.wrap{
+	width: 480px;
+	padding: 100px 0;
+}
+#login-form ul li{
+	margin-top: 10px;
+}
+#login-form ul li:not(.id-save)>div{
+	height: 60px;
+	line-height: 60px;
+}
+#login-form ul li>p{
+	padding-left: 130px;
+	font-size: 14px;
+}
+#login-form ul li:not(.id-save) div label{
+	display: none;
+}
+#login-form ul li div.idsearch{
+	font-size: 0;
+}
+#login-form ul li div.idsearch a{
+	font-size: 16px;
+	padding: 0 1em;
+	display: inline-block;
+	height: 16px;
+	line-height: 15px;
+}
+#login-form ul li div.idsearch a:first-child{
+	border-right: 1px solid #a9a9a9;
+}
+    /* type이checkbox이면 제외한 나머지 input */
+#login-form ul li input:not([type=checkbox]){
+	width: 100%;
+	padding: 0.5em 1em;
+}
+#login-form ul li:last-child{
+	margin-top: 40px;
+}
+#login-form ul li button:disabled{
+	background-color: #888;
+	cursor: default;
+	opacity: 0.5;
+}
+#login-form ul li button {
+	width: 100%;
+	height: 60px;
+}
+
+input:focus{
+	border:1px solid #0970a2; 
+	outline: none;
+}
+#id-save:checked + label:before{
+	background-color: #008000;
+}
+#save-lab::before{
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #a9a9a9;
+	background-image: url("../../images/common/img_checkW.png");
+	background-size: 13px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 10px;
+	position: relative;
+	top:4px;
+	margin-right: 5px;
+	
+}
+.simple-log{
+	margin-top: 40px;
+}
+.simple-log li a i{
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.simple-log li:nth-of-type(1) a i{
+	background-image: url("../../images/common/sns_kakao.png");
+}
+.simple-log li:nth-of-type(2) a i{
+	background-image: url("../../images/common/sns_naver.png");
+}
+.simple-log li:nth-of-type(3) a i{
+	background-image: url("../../images/common/sns_google.png");
+}
+.simple-log li:nth-of-type(4) a i{
+	background-image: url("../../images/common/login_sns_apple.png");
+}
+.simple-log li a{
+	font-size: 14px;
+	text-align: center;
+	display: block;
+}
+.simple-log li a i{
+	width: 60px;
+	height: 60px;
+	background-color: #e9e9e9;
+	border-radius:30px;
+	display: block; 
+}
