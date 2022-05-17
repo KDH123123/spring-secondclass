@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:insert="common/common :: head" />
+
+<body>
+	<th:block th:insert="common/common :: header"/> <!-- 경로지정 문법 외웟! --> <!-- insert는 태그 전체를 긁어옴 -->
+	<!-- th:block = 가상의 태그 -->
+	
+	<main>
+	</main>
+	
+	<th:block th:insert="common/common :: #footer"/> <!-- include는 내부코드만 긁어옴 --> <!-- id로 긁어올수있음 -->
+	
+</body>
+</html>

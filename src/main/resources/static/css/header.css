@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url("reset.css");
+header>.wrap{
+	width: 1024px;
+	margin: 0 auto;
+}
+
+#ht{
+	height: 45px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#htl>.wrap ul li a{
+	padding: 0.5em;
+	margin-right: 1px; 
+}
+#htl>.wrap ul li:first-child a{
+	padding-left: 0;
+}
+
+#htr>.wrap ul li a{
+	padding: 0.5em;
+	margin-left: 1px; 
+}
+#htr>.wrap ul li:last-child a{
+	padding-right: 0;
+}
+
+#hc>.wrap{
+	position: relative;
+}
+#hc>.wrap a span{
+	display: inline-block;
+	width:30px;
+	height:30px;
+	background-color: green;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	font-weight: 700;
+	border-radius: 15px;
+}
+#hc>.wrap form{
+	position: absolute;
+	top:6px;
+	right: 0;
+}
+#hb{
+	margin-top: 20px; 
+}
+#hb>.wrap>ul>li{
+	padding: 0 1em;
+	height: 40px;
+}
+/* li태그 첫번째는 제외한 나머지 li태그에 마우스오버가 발생했을때 */
+#hb>.wrap>ul>li:not(:first-child):hover{
+	border-bottom:3px solid #003900;
+}
+
+#hb>.wrap ul>li a{
+	/* display: block; */
+	height: 40px;
+	line-height: 37px;
+}
+#hb>.wrap ul>li a>span{
+	height: 40px;
+}
+#hb>.wrap ul>li:first-child{
+	background-color: #333;
+}
+#hb>.wrap ul>li:first-child a{
+	color: #fff;
+}
+#gnb{
+	margin-right: 5px;
+}
+#gnb>span{
+	position: relative;
+	display: inline-block;
+	width: 15px;
+	height: 19px;
+}
+#gnb span i{
+	border-top: 1px solid #fff;
+	display: block;
+	width: 15px;
+	height: 1px;
+	position: absolute;
+}
+#gnb span i:nth-child(1){
+	top:4px;
+}
+#gnb span i:nth-child(2){
+	top:9px;
+}
+#gnb span i:nth-child(3){
+	top:14px;
+}
+#gnb-menu{
+	position: relative;
+} 
+#gnb-menu ol.sub{
+	display: none;
+	position: absolute;
+	border: 1px solid #a9a9a9;
+	background-color: #fff;
+	top:40px;
+	z-index:99;
+	width: 120px;
+}
+/* 마우스가 위로올라갈떄 .sub 를 보여주세요 */
+#gnb-menu:hover ol.sub{
+	display: block;
+}
+
+#gnb-menu .sub>li .sub02{
+	display: none;
+	position: absolute;
+	border: 1px solid #a9a9a9;
+	background-color: #fff;
+	top:-1px;
+	left:118px;
+	z-index:99;
+}
+#gnb-menu .sub>li:hover .sub02{
+	display: block;
+	width: 120px;
+}
