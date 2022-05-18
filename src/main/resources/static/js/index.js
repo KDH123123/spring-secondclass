@@ -20,9 +20,11 @@ $(function(){
 	
 	$.ajax({
 		url: "goods/glist",
-		/*result에는 list.jsp의 태그정보가 입력됩니다.*/
-		success: function(result){
-			$(".disp").html(result);
+		type:"post",
+		//요청->응답이 성공적으로 실행했을 때 이후 작업 할 수 있는 함수
+		//Status Code: 200일 때
+		success: function(result){//result=응답결과
+			$(".disp").html(result);//disp=클래스이름
 		}
 	});
 	

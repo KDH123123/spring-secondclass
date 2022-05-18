@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<ul class="flex  between">
+		<li class="goods-list" th:each="dto:${list}">
+			<ol class="wrap">
+				<li class="gimg">
+					<div th:style="|background-image: url('${dto.imgUrl}');|"></div>
+				</li>
+				<li class="title">
+				[[${dto.title }]]</li>
+				<li><span class="rate">
+				<i th:text="${dto.saleRate*100 }"></i>% </span>
+				 <span>[[${dto.salePrice }]]원 </span> 
+				 <span class="orgin"> [[${dto.orginPrice}]]원 </span></li>
+			</ol>
+		</li>
+	</ul>
+</body>
+</html>

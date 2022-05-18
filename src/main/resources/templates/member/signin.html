@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:insert="~{common/common::head}"/> <!-- fragment가져오기 -->
+	<link rel="stylesheet" href="/css/member/signin.css">
+</head>
+<body>
+	<th:block th:insert="~{common/common::header}"/>
+	<main>
+		<h1>메인컨텐츠</h1>
+		<div class="wrap view-size">
+			<p class="p-tit">로그인</p>
+			<!-- th:utext = 태그가 잇으면 적용됨  -->
+			<p class="welcome msg" th:if="${welcome}" th:utext="${welcome}"></p><!-- [[${welcome}]] 인라인으로 써도 됨 -->
+			<form id="login-form" action="#" method="get">
+				<ul>
+					<li>
+						<div class="flex between">
+							<label for="email">이메일</label>
+							<input id="email" type="text"  placeholder="이메일">
+						</div>
+					</li>
+					<li>
+						<div class="flex between">
+							<label>비밀번호</label>
+							<input id="pass" type="password"  placeholder="비밀번호">
+						</div>
+					</li>
+					
+					<li class="id-save flex between">
+						<div>
+							<input id="id-save" name="idSave" type="checkbox"  hidden="true" />
+							<label id="save-lab" for="id-save">아이디저장</label>
+						</div>
+						<div class="idsearch">
+							<a href="#">아이디 찾기</a>
+							<a href="#">비밀번호 변경</a>
+						</div>
+					</li>
+					
+					<li>
+						<button id="btn-login" class="def-btn-style" type="submit" >로그인</button>
+					</li>
+				</ul>
+			</form>
+			<ul class="simple-log flex around">
+				<li>
+					<a href="#">
+						<i></i>
+						<span>카카오톡</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i></i>
+						<span>네이버</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i></i>
+						<span>구글</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i></i>
+						<span>애플</span>
+					</a>
+				</li>
+			</ul>
+		</div>	
+	</main>
+	<th:block th:insert="~{common/common::footer}"/>
+</body>
+</html>

@@ -18,11 +18,16 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString
+@Builder
+@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 @SequenceGenerator(sequenceName = "seq_member", name = "gen_seq_member", allocationSize = 1) // 시퀀스 이름,제너레이터 이름, 증분값
