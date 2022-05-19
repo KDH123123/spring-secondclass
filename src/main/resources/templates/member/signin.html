@@ -11,25 +11,26 @@
 		<div class="wrap view-size">
 			<p class="p-tit">로그인</p>
 			<!-- th:utext = 태그가 잇으면 적용됨  -->
-			<p class="welcome msg" th:if="${welcome}" th:utext="${welcome}"></p><!-- [[${welcome}]] 인라인으로 써도 됨 -->
-			<form id="login-form" action="#" method="get">
+			<p class="err msg" th:if="${errmsg}" th:utext="${errmsg}">로그인 실패 메시지</p><!-- [[${welcome}]] 인라인으로 써도 됨 -->
+			<p class="welcome msg" th:if="${welcome}" th:utext="${welcome}">회원가입 성공 메시지</p><!-- [[${welcome}]] 인라인으로 써도 됨 -->
+			<form id="login-form" action="/member/signin" method="post">
 				<ul>
 					<li>
 						<div class="flex between">
 							<label for="email">이메일</label>
-							<input id="email" type="text"  placeholder="이메일">
+							<input id="email" type="text" name="email" placeholder="이메일">
 						</div>
 					</li>
 					<li>
 						<div class="flex between">
 							<label>비밀번호</label>
-							<input id="pass" type="password"  placeholder="비밀번호">
+							<input id="pass" type="password" name="pass" placeholder="비밀번호">
 						</div>
 					</li>
 					
 					<li class="id-save flex between">
 						<div>
-							<input id="id-save" name="idSave" type="checkbox"  hidden="true" />
+							<input id="id-save" name="idSave" type="checkbox" value="true" hidden="true" /> <!-- valuse는 idSave의 저장 형태 지정 -->
 							<label id="save-lab" for="id-save">아이디저장</label>
 						</div>
 						<div class="idsearch">

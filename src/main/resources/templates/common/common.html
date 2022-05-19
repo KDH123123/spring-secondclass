@@ -33,7 +33,11 @@
 						<h1>헤더상단오른쪽</h1>
 						<div class="wrap">
 							<ul class="flex">
-								<li><a href="/member/signin">로그인</a></li>
+								<li th:if="${session.logInfo}">
+								<a href="#"  th:text="${session.logInfo.name}">여기에 로그인하면 이름이 나옵니다.</a>
+								<a href="#"  th:text="${session.logInfo.email}">여기에 로그인하면 이름이 나옵니다.</a>
+								<a href="/member/signout" >로그아웃</a></li>
+								<li th:unless="${session.logInfo}"><a href="/member/signin">로그인</a></li>
 								<li><a href="/member/signup-page">회원가입</a></li>
 								<li><a href="#">마이페이지</a></li>
 								<li><a href="#">주문/배송조회</a></li>

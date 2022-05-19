@@ -110,3 +110,13 @@ input:focus{
 	border-radius:30px;
 	display: block; 
 }
+
+.msg{
+	text-align: center;
+	padding: 0.5em 0;
+	background-color: #008000;
+	color: white;
+}
+.err.msg{
+	background-color: #f00;
+}
